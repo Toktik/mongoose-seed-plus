@@ -190,7 +190,7 @@ Seeder.prototype.dump = function(path, cb) {
 	}
 
 	var args = ['--db', dbname, '--out', path + '/../backup/' + dbname + '-' + date.getTime(), '--quiet'];
-	var mongodump = spawn('/usr/local/bin/mongodump', args);
+	var mongodump = spawn('mongodump', args);
 
 	mongodump.stdout.on('data', function (data) {
 	   	console.error(chalk.red('stdout: ' + data));
